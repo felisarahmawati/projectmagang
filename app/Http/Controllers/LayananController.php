@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Alert;
+use Auth;
 use Illuminate\Http\Request;
 
 class LayananController extends Controller

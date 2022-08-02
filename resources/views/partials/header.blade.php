@@ -20,7 +20,7 @@
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/user/profileuser">Profile</a></li>
+                      <li><a class="dropdown-item" href="/user/profile/profileuser">Profile</a></li>
                       <li><a class="dropdown-item" href="/user/pemesanan/History/On_Progress">Pesanan</a></li>
                       <li><a class="dropdown-item" href="/user/pemesanan/History/Last_Progress">History</a></li>
                       <li><hr class="dropdown-divider"></li>

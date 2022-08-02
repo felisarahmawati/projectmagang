@@ -11,6 +11,7 @@ use App\Http\Controllers\KontakController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\LayananController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\SuperadminController;
 /*
@@ -58,6 +59,11 @@ Route::get('/user/index', [UserController::class, 'index'])->middleware('role:us
 Route::get('/user/layanan', [LayananController::class, 'index'])->middleware('auth');
 Route::get('/user/tentang', [TentangController::class, 'index'])->middleware('auth');
 Route::get('/user/kontak', [KontakController::class, 'index'])->middleware('auth');
+// Profile
+Route::get('profile', [ProfileController::class, 'index']);
+Route::get('add-profile', [ProfileController::class, 'create']);
+Route::post('add-profile', [ProfileController::class, 'store']);
+
 
 //User-detail
 Route::get('/user/detail/barang/layanan_barang', function () {
@@ -136,14 +142,14 @@ Route::get('/user/pemesanan/pemesanan', function () {
 });
 
 //profile user
-Route::get('/user/profileuser', function () {
-    return view('/user/profileuser',[
+Route::get('/user/profile/profileuser', function () {
+    return view('/user/profile/profileuser',[
         "title" => "Profile User"
     ]);
 });
 
-Route::get('/user/edit_profile', function () {
-    return view('/user/edit_profile',[
+Route::get('/user/profile/edit_profile', function () {
+    return view('/user/profile/edit_profile',[
         "title" => "Edit Profile"
     ]);
 });
@@ -237,7 +243,341 @@ Route::get('/superadmin/setting/tambah', function () {
 });
 
 //Vendor
-Route::get('/vendor/index', [VendorController::class, 'index'])->middleware('role:vendor')->name('vendor.index');
+Route::get('/vendor/homelagi', [VendorController::class, 'index'])->middleware('role:vendor')->name('vendor.index');
+Route::get('/orderan_baru', static fn () => view('Vendor/order/kendaraan/orderan_baru'));
+Route::get('/rincian_baru', static fn () => view('Vendor/order/kendaraan/rincian_baru'));
+
+// --profile Vendor--
+
+Route::get('Vendor/Profile/profile_vendor', function () {
+    return view('Vendor/Profile/profile_vendor', [
+        "title" =>"profile_Vendor"
+    ]);
+});
+
+Route::get('Vendor/Profile/edit_profilevendor', function () {
+    return view('Vendor/Profile/edit_profilevendor', [
+        "title" =>"edit_profilevendor"
+    ]);
+});
+
+Route::get('Vendor/Profile/edit_alamat', function () {
+    return view('Vendor/Profile/profile_vendor', [
+        "title" =>"profile_Vendor"
+    ]);
+});
+
+Route::get('Vendor/Profile/Notifikasi', function () {
+    return view('Vendor/Profile/Notifikasi', [
+        "title" =>"notifikasi"
+    ]);
+});
+
+Route::get('Vendor/Profile/Kebijakan_privasi', function () {
+    return view('Vendor/Profile/Kebijakan_privasi', [
+        "title" =>"Kebijakan_privasi"
+    ]);
+});
+
+Route::get('Vendor/Profile/Ketentuan_layanan', function () {
+    return view('Vendor/Profile/Ketentuan_layanan', [
+        "title" =>"Ketentuan_layanan"
+    ]);
+});
+
+Route::get('Vendor/Profile/Pusat_bantuan', function () {
+    return view('Vendor/Profile/Pusat_bantuan', [
+        "title" =>"Pusat_bantuan"
+    ]);
+});
+
+Route::get('Vendor/Profile/Jawaban1', function () {
+    return view('Vendor/Profile/Jawaban1', [
+        "title" =>"Jawaban1"
+    ]);
+});
+
+Route::get('Vendor/Profile/Jawaban2', function () {
+    return view('Vendor/Profile/Jawaban2', [
+        "title" =>"Jawaban2"
+    ]);
+});
+
+Route::get('Vendor/Profile/Jawaban3', function () {
+    return view('Vendor/Profile/Jawaban3', [
+        "title" =>"Jawaban3"
+    ]);
+});
+
+Route::get('Vendor/Profile/Jawaban4', function () {
+    return view('Vendor/Profile/Jawaban4', [
+        "title" =>"Jawaban4"
+    ]);
+});
+
+Route::get('Vendor/Profile/Jawaban5', function () {
+    return view('Vendor/Profile/Jawaban5', [
+        "title" =>"Jawaban5"
+    ]);
+});
+
+Route::get('Vendor/Profile/Jawaban6', function () {
+    return view('Vendor/Profile/Jawaban6', [
+        "title" =>"Jawaban6"
+    ]);
+});
+
+//notifikasi vendor
+Route::get('/notifikasi', static fn () => view('Vendor/notifikasi'));
+
+//earning
+Route::get('/earning', static fn () => view('Vendor/earnings/earning'));
+Route::get('/penarikan_baru', static fn () => view('Vendor/earnings/penarikan_baru'));
+Route::get('/info_penarikan', static fn () => view('Vendor/earnings/info_penarikan'));
+Route::get('/riwayat_penarikan', static fn () => view('Vendor/earnings/riwayat_penarikan'));
+
+//orderan bangunan
+Route::get('/rincian_bangunan', static fn () => view('Vendor/order/bangunan/rincian_bangunan'));
+Route::get('/orderan_bangunan', static fn () => view('Vendor/order/bangunan/orderan_bangunan'));
+
+//orderan barang
+Route::get('/rincian_barang', static fn () => view('Vendor/order/barang/rincian_barang'));
+Route::get('/rincian_tanpapick', static fn () => view('Vendor/order/barang/rincian_tanpapick'));
+Route::get('/orderan_barang', static fn () => view('Vendor/order/barang/orderan_barang'));
+
+//orderan pickup
+Route::get('/orderan_pickup', static fn () => view('Vendor/order/pickup/orderan_pickup'));
+Route::get('/rincian_pickup', static fn () => view('Vendor/order/pickup/rincian_pickup'));
+
+//history vendor
+Route::get('/rincian_bangunan', static fn () => view('Vendor/history/bangunan/rincian_bangunan'));
+Route::get('/rincian_barang', static fn () => view('Vendor/history/barang/rincian_barang'));
+Route::get('/historybaru', static fn () => view('Vendor/history/kendaraan/historybaru'));
+Route::get('/rincian_kendaraan', static fn () => view('Vendor/history/kendaraan/rincian_kendaraan'));
+Route::get('/history_pickup', static fn () => view('Vendor/history/pickup/history_pickup'));
+
+//<--Vendor Kelola Kendaraan-->
+Route::get('Vendor/Kelola-Kendaraan/kelola_kendaraan', function () {
+    return view('Vendor/Kelola-Kendaraan/kelola_kendaraan', [
+        "title" =>"Kelola_kendaraan"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/layanan_step1', function () {
+    return view('Vendor/Kelola-Kendaraan//layanan_step1', [
+        "title" =>"laynan_step1"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/layanan_step2', function () {
+    return view('Vendor/Kelola-Kendaraan/layanan_step2', [
+        "title" =>"layanan_step2"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/layanan_step3', function () {
+    return view('Vendor/Kelola-Kendaraan/layanan_step3', [
+        "title" =>"layanan_step3"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/layanan_step4', function () {
+    return view('Vendor/Kelola-Kendaraan/layanan_step4', [
+        "title" =>"layanan_step4"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/Rincian_lahan', function () {
+    return view('Vendor/Kelola-Kendaraan/Rincian_lahan', [
+        "title" =>"Rincian_kendaraan"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/atur_alamat', function () {
+    return view('Vendor/Kelola-Kendaraan/atur_alamat', [
+        "title" =>"atur_alamat"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/Rincian_kendaraan', function () {
+    return view('Vendor/Kelola-Kendaraan/Rincian_kendaraan', [
+        "title" =>"Rincian_kendaraan"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Kendaraan/Rincian_kendaraan', function () {
+    return view('Vendor/Kelola-Kendaraan/Rincian_kendaraan', [
+        "title" =>"Rincian_kendaraan"
+    ]);
+});
+
+
+Route::get('Vendor/Kelola-Kendaraan/setelah_input', function () {
+    return view('Vendor/Kelola-Kendaraan/setelah_input', [
+        "title" =>"setelah_input"
+    ]);
+});
+
+// !--barang--
+
+Route::get('Vendor/Kelola_Barang/kelola_barangstep1', function () {
+    return view('Vendor/Kelola_Barang/kelola_barangstep1', [
+        "title" =>"Kelola_barangstep1"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/layanan_step1', function () {
+    return view('Vendor/Kelola_Barang/layanan_step1', [
+        "title" =>"layanan_step1"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/layanan_step2', function () {
+    return view('Vendor/Kelola_Barang/layanan_step2', [
+        "title" =>"layanan_step2"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/layanan_step3', function () {
+    return view('Vendor/Kelola_Barang/layanan_step3', [
+        "title" =>"layanan_step2"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/layanan_step4', function () {
+    return view('Vendor/Kelola_Barang/layanan_step4', [
+        "title" =>"layanan_step4"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/tambah_layanan', function () {
+    return view('Vendor/Kelola_Barang/tambah_layanan', [
+        "title" =>"tambah_layanan"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/tambah_jenispaket', function () {
+    return view('Vendor/Kelola_Barang/tambah_jenispaket', [
+        "title" =>"tambah_jenispaket"
+    ]);
+});
+Route::get('Vendor/Kelola_Barang/pilih_jenispaket', function () {
+    return view('Vendor/Kelola_Barang/pilih_jenispaket', [
+        "title" =>"pilih_jenispaket"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/pengelolaan_barang', function () {
+    return view('Vendor/Kelola_Barang/pengelolaan_barang', [
+        "title" =>"pengelolaan_barang"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/Rincian_lahan', function () {
+    return view('Vendor/Kelola_Barang/Rincian_lahan', [
+        "title" =>"rincian_lahan"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/setelah_input', function () {
+    return view('Vendor/Kelola_Barang/setelah_input', [
+        "title" =>"setelah_input"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/atur_alamat', function () {
+    return view('Vendor/Kelola_Barang/atur_alamat', [
+        "title" =>"atur alamat"
+    ]);
+});
+
+Route::get('Vendor/Kelola_Barang/pilih_lokasi', function () {
+    return view('Vendor/Kelola_Barang/pilih_lokasi', [
+    ]);
+});
+
+// <!--bangunan-->
+
+Route::get('Vendor/Kelola-Bangunan/kelola_bangunan', function () {
+    return view('Vendor/Kelola-Bangunan/kelola_bangunan', [
+        "title" =>"Kelola_bangun"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Bangunan/Kelola_bangunanstep1', function () {
+    return view('VendorKelola-Bangunan/Kelola_bangunanstep1', [
+        "title" =>"Kelola_bangunanstep1"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Bangunan/layanan_step1', function () {
+    return view('Vendor/Kelola-Bangunan//layanan_step1', [
+        "title" =>"layanan_step1"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Bangunan/layanan_step2', function () {
+    return view('Vendor/Kelola-Bangunan/layanan_step2', [
+        "title" =>"layanan_step2"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Bangunan/layanan_step3', function () {
+    return view('Vendor/Kelola-Bangunan/layanan_step3', [
+        "title" =>"layanan_step3"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Bangunan/atur_alamat', function () {
+    return view('Vendor/Kelola-Bangunan/atur_alamat', [
+        "title" =>"atur alamat"
+    ]);
+});
+
+Route::get('Vendor/Kelola-Bangunan/setelah_input', function () {
+    return view('Vendor/Kelola-Bangunan/setelah_input', [
+        "title" =>"setelah_input"
+    ]);
+});
+
+//<!--pickup-->
+
+Route::get('Vendor/Kelola-PickUp/kelola_pickup', function () {
+    return view('Vendor/Kelola-PickUp/kelola_pickup', [
+        "title" =>"Kelola_pickupstep1"
+    ]);
+});
+
+Route::get('Vendor/Kelola-PickUp/layanan_step1', function () {
+    return view('Vendor/Kelola-PickUp//layanan_step1', [
+        "title" =>"layanan_step1"
+    ]);
+});
+
+Route::get('Vendor/Kelola-PickUp/layanan_step2', function () {
+    return view('Vendor/Kelola-PickUp/layanan_step2', [
+        "title" =>"layanan_step2"
+    ]);
+});
+
+Route::get('Vendor/Kelola-PickUp/layanan_step3', function () {
+    return view('Vendor/Kelola-PickUp/layanan_step3', [
+        "title" =>"layanan_step3"
+    ]);
+});
+
+Route::get('Vendor/Kelola-PickUp/atur_alamat', function () {
+    return view('Vendor/Kelola-PickUp/atur_alamat', [
+        "title" =>"atur alamat"
+    ]);
+});
+
+Route::get('Vendor/Kelola-PickUp/setelah_input', function () {
+    return view('Vendor/Kelola-PickUp/setelah_input', [
+        "title" =>"setelah_input"
+    ]);
+});
+
 
 //Finance
 Route::get('/finance/page', [FinanceController::class, 'index'])->middleware('role:finance')->name('finance.index');

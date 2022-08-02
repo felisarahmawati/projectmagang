@@ -13,7 +13,7 @@
                    <h3 class="text-center fs-5 fw-normal mb-3">{{ Auth::user()->email }}</h3>
                </div>
                <div class="bt">
-                    <a href="/user/edit_profile">
+                    <a href="/user/profile/edit_profile">
                    <button class="btn btn-outline-thema"> Edit </button>
                     </a>
                </div>

@@ -40,17 +40,8 @@
                                 <h3 class="text-center fs-5 fw-normal mb-3">{{Auth::user()->email}}</h3>
                             </div>
                             <div class="bt">
-                                <button class="btn btn-outline-thema">Edit </button>
+                                <a href="{{ url('add-profile') }}" class="btn btn-outline-thema">Update</a>
                             </div>
-                            {{-- <hr width="100%" color="#c0c0c0"> --}}
-                            {{-- <div class="person-progress">
-                                <p class="mb-1 d-inline">Workload</p>
-                                <p class="float-end mb-0">74%</p>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" style="width: 74%; background:#27CD88"
-                                        aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div> --}}
                             <hr width="100%" color="#c0c0c0">
                             <div class="person-description">
                                 <p class="mb-1" style="text-align: left;">Description</p>
@@ -83,12 +74,12 @@
                                     <div class="col-md-6">
                                         <label for="firstName" class="form-label">First Name</label>
                                         <input type="text" class="form-control input-text" id="firstName"
-                                            placeholder="first name" value="{{Auth::user()->firstname}}">
+                                            placeholder="first name" value="{{Auth::user()->first_name}}">
                                     </div>
                                     <div class="col-md-6">
                                         <label for="lastName" class="form-label">Last Name</label>
                                         <input type="text" class="form-control input-text" id="lastName"
-                                            placeholder="last name" value="{{Auth::user()->lastname}}">
+                                            placeholder="last name" value="{{Auth::user()->last_name}}">
                                     </div>
                                     <div class="col-12">
                                         <label for="inputAddress" class="form-label">Address</label>
@@ -102,13 +93,8 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label for="inputState" class="form-label">State</label>
-                                        <select id="inputState" class="form-select">
-                                            <option selected>Choose your state</option>
-                                            <option>Indonesia</option>
-                                            <option>Malaysia</option>
-                                            <option>Australia</option>
-                                            <option>United State</option>
-                                        </select>
+                                        <input type="text" class="form-control input-text" id="inputCity"
+                                            placeholder="city" value="{{Auth::user()->state}}">
                                     </div>
                                     {{-- <div class="col-md-2">
                                         <label for="inputnotelp" class="form-label">No Telp</label>

@@ -144,7 +144,7 @@
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
             <div class="modal-dialog modal-lg" style="width: 28%">
             <div class="modal-content">
-                <img src="../../assets/img/Rectangle77.png" class="rounded mx-auto d-block" alt="image">
+                <img src="{{ asset('assets/img/Rectangle77.png') }}" class="rounded mx-auto d-block" alt="image">
                 {{-- <img src="../assets/img/ic2.png" class="rounded mx-auto d-block" alt="gambar" width="100px"> --}}
                 <p class="penitipan" style="padding-top: 20px"><b>Penitipan Kendaraan</b></p>
                 <div class="row">

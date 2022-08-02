@@ -181,13 +181,13 @@
                     <option value="disetujui">Disetujui</option>
                     <option value="ditolak">Ditolak</option>
                 </select> --}}
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <select id="inputState" class="form-select">
                       <option selected>Terlama</option>
                       <option>Terlambat</option>
                     </select>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <select id="inputState" class="form-select">
                       <option selected>Week</option>
                       <option>Month</option>    

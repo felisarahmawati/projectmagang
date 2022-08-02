@@ -19,13 +19,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('firstname')->default('-');
-            $table->string('lastname')->default('-');
+            $table->string('first_name')->default('-');
+            $table->string('last_name')->default('-');
             $table->string('address')->default('-');
+            $table->string('notelp')->default('-');
+            $table->enum('jeniskelamin',['L','P']);
             $table->string('city')->default('-');
             $table->string('state')->default('Indonesia');
-            $table->string('notelp')->default('-');
-            $table->string('description')->default('Its Me');
+            $table->string('description')->default('-');
             $table->rememberToken();
             $table->timestamps();
         });
