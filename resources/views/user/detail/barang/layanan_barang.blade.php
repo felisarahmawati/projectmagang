@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.user')
 
 @section('container')
 <section id="services" class="services section-bg" style="padding-top: 100px;">

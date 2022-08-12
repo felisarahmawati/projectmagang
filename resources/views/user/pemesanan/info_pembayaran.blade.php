@@ -1,63 +1,62 @@
-@extends('layouts.main')
+@extends('layouts.user')
 @section('container')
-<section id="services" class="services section-bg" style="padding-top: 80px;" data-aos-delay="50">
+<section id="services" class="services section-bg" style="padding-top: 100px;" data-aos-delay="50">
     
-    <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-        <div class="col-md-6 ps-2 mb-10">
-            <div class="card text-center">
-                <div class="card-header bg-white">
-                    <p class="mb-1 bg-white"><b>Total Pembayaran</b></p>
-                </div>
-                <div class="card-body">
-                  <p class="card-text mb-1 text-success" style="font-size: 25px"><b>IDR 600,076<b></p>
-                  <img src="../../img/centanghijau.png" alt="centangHijau" width="15%" height="15%" style="padding-top:10px">
-                  <h5 class="card-text text-secondary" style="font-size: 15px; padding-top:15px">Transfer dapat dilakukan ke nomor rekening Virtual Account BRI (BRIVA) berikut ini :</h5>
-                  <p class="card-text text-secondary mb-1" style="font-size: 25px">14 08 02</p>
-                </div>
-                <div class="card-footer text-muted bg-white">
-                  Bayar sesuai dengan nominal yang tertera
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h5 class="text text-success"><b>Info Pembayaran</b></h5>
+                    </div>
+                    <div class="card-body">
 
-    <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-        <div class="col-md-6 pe-10 ps-2 mb-10">
-            <div class="card">
-                <div class="card-header bg-white" style="text-align: justify">
-                    <p class="mb-1 text-center">Tata Cara Pembayaran</p>
-                </div>
-                <div class="card-body" style="text-align: justify">
-                    <p class="mb-1">1. Gunakan ATM / iBanking / mBanking / setor tunai untuk transfer ke rekening PT Airpay International</p>
-                    <p>2. Silahkan Upload bukti transfer sebelum 10-09-2021</p>
-                    <p>3. Demi keamanan transaksi mohon untuk tidak membagikan bukti atau Konfirmasi
-                        pembayaran pesanan kepada siapa pun, selain mengunggahnya via
-                        aplikasi titipsini.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
+                            <img src="../../assets/img/bca.png" alt="bca" width="8%" height="8%" style="padding-top:10px">
+                            <p class="mb-1 text-center" style="font-size: 25px"><b>Total Pembayaran<b></p>
+                            <p class="mb-1 text-success text-center" style="font-size: 25px"><b>IDR 600,076<b></p>
+                            <h5 class="text-center text-secondary" style="font-size: 15px; padding-top:15px">Transfer dapat dilakukan ke nomor rekening Virtual Account BRI (BRIVA) berikut ini :</h5>
+                            <p class="text-secondary text-center mb-1" style="font-size: 25px">084-506 311 2</p>
+                            <p class="text-secondary text-center mb-1" style="font-size: 15px">Bayar sesuai dengan nominal yang tertera</p>
 
-    <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-        <div class="col-md-6 pe-10 ps-2 mb-10">
-            <div class="card bg-success text-white">
-                <div class="card-body" style="text-align: justify">
-                    <p class="mb-1">Jika bukti transfer tidak di upload dalam waktu 24 jam maka pesanan
-                        akan otomatis dibatalkan.
-                    </p>
+
+                            <div class="card-body mb-2">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-1-circle-fill" viewBox="0 0 16 16" style="color: #F24E1E">
+                                            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z"/>
+                                          </svg>Gunakan ATM / iBanking / mBanking / setor tunai</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16" style="color: #F24E1E">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+                                          </svg>Silahkan Upload bukti transfer sebelum 10-09-2021</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-3-circle-fill" viewBox="0 0 16 16" style="color: #F24E1E">
+                                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z"/>
+                                          </svg>Demi keamanan transaksi mohon untuk tidak membagikan bukti atau Konfirmasi
+                                          pembayaran pesanan kepada siapa pun, selain mengunggahnya via
+                                          aplikasi titipsini.com</p>
+                                    </div>
+                                </div>
+                                <div class="card text-dark mb-3">
+                                    <div class="card-body" style="background: rgba(56, 218, 119, 0.3)">
+                                        <p class="mb-1">Jika bukti transfer tidak di upload dalam waktu 24 jam maka pesanan
+                                            akan otomatis dibatalkan.
+                                        </p>
+                                    </div>
+                                </div>
+                                    <div class="d-grid gap-2 col-6 mx-auto">
+                                        <a class="btn btn-outline-success" href="/user/pemesanan/konfirm_pembayaran" role="button">Upload bukti transfer sekarang</a>
+                                        <a class="btn btn-outline-secondary" href="#" role="button">Upload bukti transfer nanti</a>
+                                    </div>
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-        <div class="col-md-6 pe-10 ps-2 mb-10">
-            <div class="d-grid gap-2 col-6 mx-auto">
-                <button class="btn btn-success" type="button"><a href="/user/pemesanan/konfirm_pembayaran">Upload bukti transfer sekarang</a></button>
-                <button class="btn btn-secondary" type="button">Upload bukti transfer nanti</button>
-            </div>
-        </div>
-    </div>
     </div>
 </section>
 @endsection

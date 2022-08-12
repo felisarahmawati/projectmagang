@@ -29,6 +29,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// chat
+
+
+
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -135,8 +139,26 @@ Route::get('/user/pemesanan/konfirm_pembayaran', function () {
     ]);
 });
 
+Route::get('/user/pemesanan/pemesanan_bangunan', function () {
+    return view('/user/pemesanan/pemesanan_bangunan',[
+        "title" => "Pemesanan_bangunan"
+    ]);
+});
+
+Route::get('/user/pemesanan/pemesanan_kendaraan', function () {
+    return view('/user/pemesanan/pemesanan_kendaraan',[
+        "title" => "Pemesanan"
+    ]);
+});
+
 Route::get('/user/pemesanan/pemesanan', function () {
     return view('/user/pemesanan/pemesanan',[
+        "title" => "Pemesanan"
+    ]);
+});
+
+Route::get('/user/pemesanan/barang', function () {
+    return view('/user/pemesanan/barang',[
         "title" => "Pemesanan"
     ]);
 });
@@ -191,6 +213,32 @@ Route::get('/user/bantuan', function () {
     ]);
 });
 
+//Jawaban bantuan
+
+Route::get('/user/jawaban1', function () {
+    return view('/user/jawaban1',[
+    ]);
+});
+
+Route::get('/user/jawaban2', function () {
+    return view('/user/jawaban2',[
+    ]);
+});
+
+Route::get('/user/jawaban3', function () {
+    return view('/user/jawaban3',[
+    ]);
+});
+
+Route::get('/user/jawaban4', function () {
+    return view('/user/jawaban4',[
+    ]);
+});
+
+Route::get('/user/jawaban5', function () {
+    return view('/user/jawaban5',[
+    ]);
+});
 //Superadmin
 Route::get('/superadmin/index', [SuperadminController::class, 'index'])->middleware('role:superadmin')->name('superadmin.index');
 
@@ -243,14 +291,19 @@ Route::get('/superadmin/setting/tambah', function () {
 });
 
 //Vendor
+
 Route::get('/vendor/homelagi', [VendorController::class, 'index'])->middleware('role:vendor')->name('vendor.index');
 Route::get('/orderan_baru', static fn () => view('Vendor/order/kendaraan/orderan_baru'));
 Route::get('/rincian_baru', static fn () => view('Vendor/order/kendaraan/rincian_baru'));
+Route::get('vendor/dashboard', function () {
+    return view('vendor/dashboard', [
 
+    ]);
+});
 // --profile Vendor--
 
-Route::get('Vendor/Profile/profile_vendor', function () {
-    return view('Vendor/Profile/profile_vendor', [
+Route::get('vendor/Profile/profile_vendor', function () {
+    return view('vendor/Profile/profile_vendor', [
         "title" =>"profile_Vendor"
     ]);
 });
