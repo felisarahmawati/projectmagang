@@ -115,11 +115,22 @@
     </div>
 
     
-
-
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-        class="bi bi-arrow-up-short"></i></a>
+    <button type="button" class="btn outline-success back-to-top d-flex align-items-center justify-content-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+        class="bi bi-chat-dots-fill"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">+99 <span class="visually-hidden">unread messages</span></span></button>
+</div>
+{{-- offcanvass --}}
+<div class="offcanvas offcanvas-end col-sm-12" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Chat </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div><img src="../../../assets/img/Logoo.png" alt="" class="rounded "  style="width:30px; height:30px" > <p class="bg-color-light">hello!!!</p></div>
+      
+    </div>
+  </div>
+    
+    
 
 <!-- Vendor JS Files -->
 <script src="../../../assets/vendor/aos/aos.js"></script>

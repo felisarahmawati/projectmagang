@@ -1,6 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.user')
 @section('container')
-<section id="services" class="services section-bg" style="padding-top: 100px;">
+<section id="services" class="services" style="padding-top: 100px;">
 <div class="container mt-4 mb-4">
 
     <div class="row row-cols-1 row-cols-md-2 g-4">

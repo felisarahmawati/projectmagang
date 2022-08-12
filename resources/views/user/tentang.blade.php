@@ -1,7 +1,6 @@
 @extends('layouts.main')
-@extends('partials.header')
 @section('container')
-    <section id="about" class="about">
+<section class="align-items-center"  id="services" style="padding-top: 100px;" data-aos-delay="50">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5 d-flex align-items-center justify-content-center about-img" width="100%">

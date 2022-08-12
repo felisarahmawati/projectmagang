@@ -1,109 +1,112 @@
-@extends('layouts.main')
+@extends('layouts.user')
 
 @section('container')
     
-<section id="services" class="services section-bg" style="padding-top: 100px;">
-    <div class="container detail_layanan" data-aos="fade-up">
-        <div class="section-title">
-            <p>Detail Layanan</p>
-            <img src="../../../assets/img/detaillayanan.png" alt="" width="550px" height="300px">
-        </div>
-        <div class="container-fluid">
-            {{-- Card Packing and order --}}
-            <div class="row g-3" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000">
-                <div class="col-md-6 mt-4 pe-2">
-                    <div class="card-packing d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-                        <div class="card padding-top: 10px" style="width: 25rem;">
-                            <img src="../../../assets/img/date.png" class="card-img-top" alt="...">
-                            <div class="card-body text-center text-success">
-                            <p class="card-text"><b>Estimasi hari : 4 Hari</b></p>
-                            </div>
-                        </div>
-                        <hr width="75%" color="#c0c0c0">
-                        <div class="col" style="padding-top: 10px;">
-                            <div class="form-check form-check-inline form-switch">
-                                <label for="check1" class="form-check-label"><b>Packing</b></label>
-                                <input type="checkbox" class="form-check-input" value="" id="check1">
-                            </div>
-                        </div>
+<section id="services" class="services section-bg" style="padding-top: 100px;" data-aos-delay="50">
+
+    <div class="section-title">
+        <p>Detail Layanan</p>
+
+        <img src="../../../assets/img/detaillayanan.png" alt="" width="440px" height="200px">
+
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <h5 class="card-title text-success"><b>Detail Layanan</b></h5>
                     </div>
-                </div>
-
-                {{-- Card form layanan --}}
-                <div class="col-md-6 mt-4 pe-10 ps-2 mb-1 container">
-                    <div class="card-layanan d-flex flex-column px-0 py-4">
-                        <div class="id-layanan px-3">
-                            <h6 class="mb-1 fw-bold text-center"><b>Layanan Barang</b></h6>
-                        </div>
-                        <hr width="100%" color="#c0c0c0">
-                        <div class="col-md-20">
-                            <label for="inputKendaraan" class="form-label"><b>Barang</b></label>
-                            <select id="inputKendaraan" class="form-select">
-                                <option selected>Pilih Barang</option>
-                                <option>Tas</option>
-                                <option>Lemari</option>
-                                <option>Meja</option>
-                                <option>Kursi</option>
-                                <option>Buku</option>
-                                <option>Laptop</option>
-                                <option>Pc</option>
-                                <option>Kasur</option>
-                                <option>Kompor</option>
-                                <option>Dispenser</option>
-                                <option>AC</option>
-                                <option>TV</option>
-                                <option>Kipas Angin</option>
-                                <option>Sepatu</option>
-                                <option>Baju</option>
-                            </select>
-                        </div>
-                        <div class="mb-3" style="padding-top: 10px;">
-                            <label for="exampleFormControlInput1" class="form-label"><b>Tanggal Masuk</b></label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="14-08-2022">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label"><b>Tanggal Keluar</b></label>
-                            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="05-03-2022">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label for="Quantity"><b>Barang</b></label>
-                                <div class="input-group mb-3" style="width: 130px">
-                                    <button class="input-group-text decrement-btn">-</button>
-                                    <input type="text" class="form-control text-center input-qty bg-white" value="1" disabled>
-                                    <button class="input-group-text increment-btn">+</button>
-                                </div>
-                                <div class="input-group mb-3" style="width: 130px">
-                                    <button class="input-group-text decrement-btn">-</button>
-                                    <input type="text" class="form-control text-center input-qty bg-white" value="2" disabled>
-                                    <button class="input-group-text increment-btn">+</button>
-                                </div>
-                                <div class="input-group mb-3" style="width: 130px">
-                                    <button class="input-group-text decrement-btn">-</button>
-                                    <input type="text" class="form-control text-center input-qty bg-white" value="2" disabled>
-                                    <button class="input-group-text increment-btn">+</button>
+                    <div class="card-body">
+                        
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                <label for="inputKendaraan" class="form-label"><b>Barang</b></label>
+                                <select id="inputKendaraan" class="form-select">
+                                    <option selected>Pilih Barang</option>
+                                    <option>Tas</option>
+                                    <option>Lemari</option>
+                                    <option>Meja</option>
+                                    <option>Kursi</option>
+                                    <option>Kulkas</option>
+                                    <option>Kompor</option>
+                                    <option>Ac</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="tanggalmasuk" class="form-label"><b>Tanggal Masuk</b></label>
+                                <input type="date" class="form-control" id="tanggal">
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="tanggalkeluar" class="form-label"><b>Tanggal Keluar</b></label>
+                                <input type="date" class="form-control" id="tanggal">
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="qty" class="form-label"><b>Quantity</b></label>
+                                <div class="box mt-3" width="100%">
+                                    <label for="name">Tas : </label>
+                                    <div class="dec button">-</div>
+                                    <input type="text" name="qty" id="1" value="0" class="input-filed">
+                                    <div class="inc button">+</div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="input-group mb-3" style="width: 320%">
+                            <div class="col-sm-4">
+                                <div class="box mt-5" width="100%">
+                                    <label for="name">Meja : </label>
+                                    <div class="dec button">-</div>
+                                    <input type="text" name="qty" id="1" value="0" class="input-filed">
+                                    <div class="inc button">+</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="box mt-5" width="100%">
+                                    <label for="name">Kulkas : </label>
+                                    <div class="dec button">-</div>
+                                    <input type="text" name="qty" id="1" value="0" class="input-filed">
+                                    <div class="inc button">+</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label for="Note"><b>Catatan</b></label>
+                                <div class="input-group mb-3">
                                     <span class="input-group-text bg-white"><i class="bi bi-bookmark-plus"></i></span>
-                                    <input type="text" class="form-control bg-white" placeholder="Catatan" name="kosan">
+                                    <input type="text" class="form-control bg-white" placeholder="eg.skooter" name="skooter">
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-success" type="button"><a href="/user/pemesanan/pemesanan">Order</a></button>
+                            <div style="margin-left: 25%;">
+                                <div class="card text-center" style="width: 50%;">
+                                    <div class="card-body bg-success text-white">
+                                      <div class="row">
+                                        <div class="col">
+                                            <p class="checkin">Check in</p>
+                                            <p class="date">26 Okt.2021</p>
+                                        </div>
+                                        <div class="col mt-2">
+                                            <h1><i class="bi bi-chevron-right"></i></h1>
+                                        </div>
+                                        <div class="col">
+                                            <p class="checkin">Check out</p>
+                                            <p class="date">30 Okt.2021</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="card-footer text-success bg-white">
+                                        <b>Estimasi hari : 4 hari</b>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="d-grid gap-2 col-6 mx-auto" style="width:35%">
+                                <a class="btn btn-outline-success" href="/user/pemesanan/barang" role="button">Order</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 
-    </section>
+    
+    </div>
+</section>
 
 @endsection
     

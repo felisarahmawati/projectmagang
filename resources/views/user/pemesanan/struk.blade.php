@@ -1,141 +1,127 @@
-@extends('layouts.main')
+@extends('layouts.user')
 
     <!-- card virtual akun -->
     <section id="services" class="services section-bg" style="padding-top: 100px;" data-aos-delay="50">
+    
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-body mb-4 text-center" style="background: rgba(56, 218, 119, 0.15)">
+                                <img src="../../assets/img/titip.png" alt="titip" width="100px" height="100px">
+                                <p class="card-text text-success mb-1" style="font-size: 20px"><b>Titipsini.com</b></p>
+                            </div>
+                            <div class="card-body mb-4" style="background: rgba(251, 244, 175, 0.45)">
+                                <p class="mb-1" style="color: rgba(254, 171, 114, 1)"><b>Caution:</b></p>
+                                <p class="mb-1" style="color: rgba(254, 171, 114, 1)">
+                                    Jangan bagikan bukti pembayaran kepada siapapun.
+                                </p>
+                            </div>
+                            <form action="/signup/index" method="POST" enctype="multipart/form-data">
+                                <label for="faq" class="form-label"><b>Informasi</b></label><hr>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Tanggal</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            12 Agustus 2024
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Nama pengirim</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            Angel Silubun
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>ID Pembayaran</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            13240294234132
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Transfer dari bank</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                        BCA
+                                        </div>   
+                                    </div>
+                                    <hr width="100%" color="#c0c0c0">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Jumlah Barang</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            15
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Jumlah Hari</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            4
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Total Service</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            5 x 14
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Subtotal</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            IDR 3,5000,000
+                                        </div>   
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Diskon 15%</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            IDR 525,000
+                                        </div>   
+                                    </div>
+                                    <hr width="100%" color="#c0c0c0">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Total Price</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            IDR 2,973,000
+                                        </div>   
+                                    </div>
+                                    <hr width="100%" color="#c0c0c0">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <p>Metode Pembayaran</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            ATM (BCA)
+                                        </div>   
+                                    </div>
+                                </div>
+                                    <div class="d-grid gap-2 col-6 mx-auto">
+                                        <a class="btn btn-outline-success" href="/user/pemesanan/History/On_Progress" role="button">Oke</a>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
         
-        <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-            <div class="col-md-6 pe-10 ps-2 mb-10">
-                <div class="card text-center">
-                    <div class="card-body">
-                      <img src={{ asset('assets/img/titip.png') }} alt="titip" width="15%" height="15%" style="padding-top:10px">
-                      <p class="card-text text-success mb-1" style="font-size: 15px"><b>Titipsini.com</b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-            <div class="col-md-6 pe-10 ps-2 mb-10">
-                <div class="card text-white" style="background-color:rgb(255, 199, 110)">
-                    <div class="card-body" style="text-align: justify;">
-                        <p class="mb-1"><b>Caution:</b></p>
-                        <p>Jangan bagikan bukti pembayaran kepada siapapun.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-            <div class="col-md-6 pe-10 ps-2 mb-10">
-                <div class="card text-white bg-success">
-                    <div class="card-header">
-                        <p class="mb-1"><b>Informasi</b></p>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Tanggal</p>
-                            </div>
-                            <div class="col-md-3">
-                                12 Agustus 2024
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Nama pengirim</p>
-                            </div>
-                            <div class="col-md-3">
-                                Angel Silubun
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>ID Pembayaran</p>
-                            </div>
-                            <div class="col-md-3">
-                                13240294234132
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Transfer dari bank</p>
-                            </div>
-                            <div class="col-md-3">
-                            BCA
-                            </div>   
-                        </div>
-                        <hr width="100%" color="#c0c0c0">
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Jumlah Barang</p>
-                            </div>
-                            <div class="col-md-3">
-                                15
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Jumlah Hari</p>
-                            </div>
-                            <div class="col-md-3">
-                                4
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Total Service</p>
-                            </div>
-                            <div class="col-md-3">
-                                5 x 14
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Subtotal</p>
-                            </div>
-                            <div class="col-md-3">
-                                IDR 3,5000,000
-                            </div>   
-                        </div>
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Diskon 15%</p>
-                            </div>
-                            <div class="col-md-3">
-                                IDR 525,000
-                            </div>   
-                        </div>
-                        <hr width="100%" color="#c0c0c0">
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Total Price</p>
-                            </div>
-                            <div class="col-md-3">
-                                IDR 2,973,000
-                            </div>   
-                        </div>
-                        <hr width="100%" color="#c0c0c0">
-                        <div class="row">
-                            <div class="col-md">
-                                <p>Metode Pembayaran</p>
-                            </div>
-                            <div class="col-md-3">
-                                ATM (BCA)
-                            </div>   
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid d-flex justify-content-center align-items-center py-3 rounded-lg flex-column">
-            <div class="col-md-6 pe-10 ps-2 mb-10">
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-success" type="button"> <a href="/user/layanan">Selesai</button></a>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
         
